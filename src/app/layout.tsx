@@ -16,12 +16,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  applicationName: "WorkBot",
   title: {
     default: "WorkBot",
     template: "%s | WorkBot",
   },
   description:
     "Workflow platform for enterprise teams: route requests to the right approver and keep a record of each decision.",
+  // Only site-wide fields: og:title and og:description follow each page.
+  openGraph: {
+    type: "website",
+    siteName: "WorkBot",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
