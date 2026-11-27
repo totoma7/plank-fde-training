@@ -1,0 +1,2 @@
+# Prettier also reads .gitignore; these are tracked but not ours to format.
+pnpm-lock.yaml
