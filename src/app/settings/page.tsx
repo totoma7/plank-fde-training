@@ -12,6 +12,8 @@ import { config, type DeploymentEnvironment } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Settings",
+  description:
+    "The deployment environment and commit of the build serving WorkBot.",
 };
 
 const environmentBadge: Record<
