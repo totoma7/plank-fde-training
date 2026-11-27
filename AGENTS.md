@@ -66,7 +66,9 @@ data and secrets directly.
 
 ### 4. Finish every change
 
-- `pnpm check` passes before you commit; CI runs the same command.
+- Ship each change as its own pull request through the loop in
+  `docs/pr-loop.md`.
+- `pnpm check` passes before you push; CI runs the same command.
 - Format with `pnpm format` instead of by hand.
 - Keep commits small and messages honest: the course verification reads them.
 - Read the guide for a Next.js API before using it (see below).
