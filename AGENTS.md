@@ -36,7 +36,7 @@ Use pnpm only.
   `error.tsx`). Keep them thin and move logic out.
 - `src/components/`: shared React components. `src/components/ui/` is
   shadcn/ui output; change it only to customize a primitive.
-- `src/lib/`: non-UI code such as helpers, data access, API clients, `env.ts`.
+- `src/lib/`: non-UI code such as helpers, data access, API clients, `config.ts`.
 - `public/`: static files served as-is.
 - Import through the `@/` alias (`@/components/ui/button`), not `../../`.
 
@@ -54,12 +54,11 @@ data and secrets directly.
 
 ### 3. Read `process.env` in one module only
 
-- `src/lib/env.ts` is the only file that reads `process.env`; everything else
-  imports typed values from it. It does not exist yet: create it with the
-  first variable.
-- It starts with `import "server-only"` (`pnpm add server-only`), so importing
-  it from a Client Component fails the build. Client Components receive values
-  as props.
+- `src/lib/config.ts` is the only file that reads `process.env`; everything
+  else imports typed values from its `config` object. Give each variable a
+  local default or fail loudly when it is required.
+- It starts with `import "server-only"`, so importing it from a Client
+  Component fails the build. Client Components receive values as props.
 - List every variable with a placeholder in `.env.example` (committed). Real
   values go in `.env.local` (gitignored).
 - `NEXT_PUBLIC_*` values are inlined into the browser bundle at build time.
