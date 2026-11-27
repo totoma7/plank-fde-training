@@ -25,10 +25,10 @@ const environmentBadge: Record<
 
 export default function SettingsPage() {
   return (
-    <main className="mx-auto w-full max-w-2xl px-4 py-10 sm:px-6 sm:py-16">
+    <main className="mx-auto w-full max-w-5xl px-4 py-10 sm:px-6 sm:py-16">
       <h1 className="text-2xl font-semibold tracking-tight">Settings</h1>
 
-      <Card className="mt-6">
+      <Card className="mt-6 max-w-2xl">
         <CardHeader>
           <CardTitle>Deployment</CardTitle>
           <CardDescription>
